@@ -1,0 +1,19 @@
+
+<div id="header">
+  <div class='header-box'>
+    <legend>Airport Distance Calculator</legend>
+  </div>
+
+
+  <div id= 'search-form'>
+    <%= form_tag(dist_airports_path, method: "get") do %>
+      <%= text_field_tag :from, nil, placeholder: "Origin airport", data: {autocomplete_source: dist_airports_path}, class: "search-field" %> 
+      <%= text_field_tag :to, nil, placeholder: "Destination airport", data: {autocomplete_source: dist_airports_path}, class: "search-field" %> 
+      <%= submit_tag "Search",  id: "search-button" %>
+    <% end %>
+
+    <div class="result"></div>
+  </div>
+</div>
+<div id="map-canvas"></div>
+
