@@ -13,7 +13,9 @@ jQuery ->
         window.lng1 = parseFloat(ui.item.lng)
         window.fromName1 = ui.item.name
       else if $('#from').val() != "" && !ui.item
-          message = "<h4> Sorry, I don't recognize Origin airport <em> #{$('#from').val()} </em></h4>"
+          from = $('#from').val()
+          escaped_from = from.replace(/([ #;&,.+*~\':"!^$[\]()=>|\/@])/g, '\\$1')
+          message = "<h4> Sorry, I don't recognize Origin airport <em> #{escaped_from} </em></h4>"
           $('.result').html(message)
       else
         message = "<h4> Please enter an Origin airport </h4>"
@@ -29,7 +31,9 @@ jQuery ->
         if $('#from').val() != ""
           $('#search-button').trigger('click')
       else if $('#to').val() != "" && !ui.item
-        message = "<h4> Sorry, I don't recognize destination airport <em> #{$('#to').val()} </em></h4>"
+        to = $('#to').val()
+        escaped_to = to.replace(/([ #;&,.+*~\':"!^$[\]()=>|\/@])/g, '\\$1')
+        message = "<h4> Sorry, I don't recognize destination airport <em> #{escaped_to} </em></h4>"
         $('.result').html(message)
       else
         message = "<h4> Please enter an Origin airport </h4>"
