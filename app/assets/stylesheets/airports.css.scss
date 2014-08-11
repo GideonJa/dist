@@ -27,7 +27,7 @@ body { height: 100%; margin: 0; padding: 0 }
 
 legend {
 display: block;
-width: 15%;
+width: 300px;
 padding: .5em;
 margin: auto auto;
 margin-bottom: .3em;
@@ -46,6 +46,7 @@ border-bottom: 1px solid #e5e5e5;
   border-bottom: 1px solid #e4e4e4;
   height: 150px;
   display: block;
+  min-width: 810px;
 }
 
 .header-box {
